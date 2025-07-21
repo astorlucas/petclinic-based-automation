@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petclinic Frontend</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="login-overlay" class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Iniciar sesión</p>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Usuario</label>
+            <div class="control">
+              <input class="input" type="text" id="login-username" placeholder="user">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Contraseña</label>
+            <div class="control">
+              <input class="input" type="password" id="login-password" placeholder="password">
+            </div>
+          </div>
+          <p id="login-error" class="help is-danger" style="display:none;"></p>
+        </section>
+        <footer class="modal-card-foot">
+          <button id="login-btn" class="button is-primary">Entrar</button>
+        </footer>
+      </div>
+    </div>
+    <header>
+        <h1 class="title has-text-primary has-text-centered" style="margin-top:1rem;">Spring Petclinic Frontend</h1>
+        <nav class="tabs is-centered is-boxed">
+            <ul>
+                <li><a class="tab-btn" data-tab="dashboard">Inicio</a></li>
+                <li><a class="tab-btn" data-tab="owners">Owners</a></li>
+                <li><a class="tab-btn" data-tab="pets">Pets</a></li>
+                <li><a class="tab-btn" data-tab="vets">Vets</a></li>
+                <li><a class="tab-btn" data-tab="visits">Visits</a></li>
+                <li><a class="tab-btn" data-tab="pettypes">Pet Types</a></li>
+                <li><a class="tab-btn" data-tab="specialties">Specialties</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="dashboard" class="tab-section active">
+            <div class="columns is-multiline is-centered" style="margin-top:2rem;" id="dashboard-cards">
+                <div class="column is-3">
+                    <a class="card dashboard-card" data-tab="owners">
+                        <div class="card-content has-text-centered">
+                            <span class="icon is-large"><i class="fas fa-user fa-2x"></i></span>
+                            <p class="title is-5">Owners</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="column is-3">
+                    <a class="card dashboard-card" data-tab="pets">
+                        <div class="card-content has-text-centered">
+                            <span class="icon is-large"><i class="fas fa-dog fa-2x"></i></span>
+                            <p class="title is-5">Pets</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="column is-3">
+                    <a class="card dashboard-card" data-tab="vets">
+                        <div class="card-content has-text-centered">
+                            <span class="icon is-large"><i class="fas fa-user-md fa-2x"></i></span>
+                            <p class="title is-5">Vets</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="column is-3">
+                    <a class="card dashboard-card" data-tab="visits">
+                        <div class="card-content has-text-centered">
+                            <span class="icon is-large"><i class="fas fa-calendar-check fa-2x"></i></span>
+                            <p class="title is-5">Visits</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="column is-3">
+                    <a class="card dashboard-card" data-tab="pettypes">
+                        <div class="card-content has-text-centered">
+                            <span class="icon is-large"><i class="fas fa-paw fa-2x"></i></span>
+                            <p class="title is-5">Pet Types</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="column is-3">
+                    <a class="card dashboard-card" data-tab="specialties">
+                        <div class="card-content has-text-centered">
+                            <span class="icon is-large"><i class="fas fa-stethoscope fa-2x"></i></span>
+                            <p class="title is-5">Specialties</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="column is-3">
+                    <a class="card dashboard-card" data-tab="aboutus">
+                        <div class="card-content has-text-centered">
+                            <span class="icon is-large"><i class="fas fa-info-circle fa-2x"></i></span>
+                            <p class="title is-5">About Us</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="aboutus" class="section" style="display:none; max-width: 700px; margin: 2rem auto;">
+                <button id="aboutus-back" class="button is-light" style="margin-bottom:1.5rem;">&larr; Back to Dashboard</button>
+                <h2 class="title is-4">About Us</h2>
+                <p>Este es un párrafo de ejemplo para la sección About Us. Debe haber varios párrafos para que el tester tenga que hacer scroll.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+                <p>Segundo párrafo. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                <p>Tercer párrafo. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+                <p>Cuarto párrafo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+                <p>Quinto párrafo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <p>Sexto párrafo. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.</p>
+                <p>Séptimo párrafo. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.</p>
+                <p>Octavo párrafo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.</p>
+                <p>Noveno párrafo. Suspendisse in orci enim.</p>
+                <p>Décimo párrafo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </div>
+        </section>
+        <section id="owners" class="tab-section">
+            <h2>Owners</h2>
+            <div id="owners-list"></div>
+            <form id="owner-form">
+                <h3>Add/Edit Owner</h3>
+                <input type="hidden" name="id">
+                <input type="text" name="firstName" placeholder="First Name" required pattern="[A-Za-z ]+" title="Only letters and spaces allowed">
+                <input type="text" name="lastName" placeholder="Last Name" required pattern="[A-Za-z ]+" title="Only letters and spaces allowed">
+                <input type="text" name="address" placeholder="Address" required pattern="[A-Za-z0-9 ,.\-]+" title="Letters, numbers, spaces, comma, period, and dash allowed">
+                <input type="text" name="city" placeholder="City" required pattern="[A-Za-z ]+" title="Only letters and spaces allowed">
+                <input type="text" name="telephone" placeholder="Telephone" required pattern="\d{10}" maxlength="10" title="Phone number must be exactly 10 digits">
+                <button type="submit">Save</button>
+                <button type="button" id="owner-form-cancel">Cancel</button>
+            </form>
+        </section>
+        <section id="pets" class="tab-section">
+            <h2>Pets</h2>
+            <div id="pets-list"></div>
+            <form id="pet-form">
+                <h3>Add/Edit Pet</h3>
+                <input type="hidden" name="id">
+                <input type="text" name="name" placeholder="Name" required pattern="[A-Za-z0-9 ]+" title="Only letters, numbers, and spaces allowed" class="u-full-width">
+                <input type="date" name="birthDate" placeholder="Birth Date" required class="u-full-width">
+                <input type="number" name="ownerId" placeholder="Owner ID" required min="1" class="u-full-width">
+                <select name="typeId" id="pet-type-select" required class="u-full-width">
+                    <option value="">Select Pet Type</option>
+                </select>
+                <button type="submit" class="button-primary">Save</button>
+                <button type="button" id="pet-form-cancel" class="button">Cancel</button>
+            </form>
+        </section>
+        <section id="vets" class="tab-section">
+            <h2>Vets</h2>
+            <div id="vets-list"></div>
+        </section>
+        <section id="visits" class="tab-section">
+            <h2>Visits</h2>
+            <div id="visits-list"></div>
+            <form id="visit-form">
+                <h3>Add/Edit Visit</h3>
+                <input type="hidden" name="id">
+                <input type="date" name="date" placeholder="Date" required>
+                <iframe id="visit-description-iframe" title="Visit Description" style="width: 100%; height: 80px; border: 1px solid #ccc;"></iframe>
+                <input type="number" name="petId" placeholder="Pet ID" required min="1">
+                <button type="submit">Save</button>
+                <button type="button" id="visit-form-cancel">Cancel</button>
+            </form>
+        </section>
+        <section id="pettypes" class="tab-section">
+            <h2>Pet Types</h2>
+            <div id="pettypes-list"></div>
+            <form id="pettype-form">
+                <h3>Add/Edit Pet Type</h3>
+                <input type="hidden" name="id">
+                <input type="text" name="name" placeholder="Name" required pattern="[A-Za-z0-9 ]+" title="Only letters, numbers, and spaces allowed">
+                <button type="submit">Save</button>
+                <button type="button" id="pettype-form-cancel">Cancel</button>
+            </form>
+        </section>
+        <section id="specialties" class="tab-section">
+            <h2>Specialties</h2>
+            <p style="margin-bottom:1rem;color:#444;">Para cargar especialidades en lote, cree un archivo .csv o .txt con los nombres de las especialidades separados por comas, por ejemplo: <code>Dentistry, Surgery, Radiology</code>. Luego seleccione el archivo y haga clic en "Upload CSV".</p>
+            <div class="field is-grouped" style="margin-bottom:1rem;align-items:center;">
+                <div class="control">
+                    <div class="file has-name is-info">
+                        <label class="file-label">
+                            <input class="file-input" type="file" id="specialty-upload-file" accept=".csv,.txt">
+                            <span class="file-cta">
+                                <span class="file-icon"><i class="fas fa-upload"></i></span>
+                                <span class="file-label">Elegir archivo</span>
+                            </span>
+                            <span class="file-name" id="specialty-upload-filename">Ningún archivo seleccionado</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="control">
+                    <button type="button" id="specialty-upload-btn" class="button is-primary">Upload CSV</button>
+                </div>
+            </div>
+            <div id="specialties-list"></div>
+            <form id="specialty-form">
+                <h3>Add/Edit Specialty</h3>
+                <input type="hidden" name="id">
+                <input type="text" name="name" placeholder="Name" required pattern="[A-Za-z0-9 ]+" title="Only letters, numbers, and spaces allowed" class="u-full-width">
+                <button type="submit" class="button-primary">Save</button>
+                <button type="button" id="specialty-form-cancel" class="button">Cancel</button>
+            </form>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html> 

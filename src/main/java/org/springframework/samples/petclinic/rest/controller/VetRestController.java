@@ -39,7 +39,6 @@ import java.util.stream.Collectors;
  */
 
 @RestController
-@CrossOrigin(exposedHeaders = "errors, content-type")
 @RequestMapping("api")
 public class VetRestController implements VetsApi {
 
