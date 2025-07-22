@@ -1,8 +1,8 @@
-# Spring Petclinic REST Backend & Modern Frontend
+# Spring Petclinic REST Backend & Frontend
 
 This project is a RESTful backend for a veterinary clinic, with a modern static frontend for managing owners, pets, vets, visits, pet types, and specialties.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Running Locally
 
