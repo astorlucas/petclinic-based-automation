@@ -21,40 +21,32 @@ The app will be available at [http://localhost:9966/petclinic/index.html](http:/
 
 ### Database
 - By default, uses in-memory H2. See `src/main/resources/application.properties` for configuration.
-- To use MySQL or PostgreSQL, update the active profile and use the provided Docker Compose or manual Docker commands.
 
-## 🖥️ Frontend Usage
+## Frontend Usage
 - After login (user: `user`, password: `password`), you will see a dashboard with cards for each main section.
 - Click a card to access Owners, Pets, Vets, Visits, Pet Types, Specialties, or About Us.
-- The About Us section is designed for UI automation practice and requires scrolling to interact with all content.
 - Specialties support bulk upload via CSV.
 
-## 📚 Project Structure
+## Project Structure
 - `src/main/java/` — Backend REST API (Spring Boot)
-- `src/main/resources/static/` — Modern static frontend (HTML, CSS, JS)
-- `NO-MOSTRAR/` — Example test suites and resources (see Milestones below)
+- `src/main/resources/static/` — Frontend (HTML, CSS, JS)
 
-## 📝 Milestones for Students
-You are expected to replicate a full testing and automation suite for this project, similar in scope and structure to the contents of the `NO-MOSTRAR` folder. Your milestones should include:
+# Milestones
+You are expected to create a full testing and automation suite for this project. Your milestones should include:
 
-### 1. Unit Testing
+### 1. Milestone 1 ✅
+- Identify classes/methods suitable for unit testing.
 - Implement unit tests for backend logic.
 - Use TestNG as the test framework.
 - Document designed test cases and use data-sets where appropriate.
+- Use data-sets (e.g., CSV or JSON) to parameterize test data.
+- Make a new branch e.g.: milestone-1 and push your changes, **THIS IS IMPORTANT**
+- Run tests on GitHub Actions for every PR or push to main.
+- Use the tools at your disposal, Allure Report, Surefire, JaCoCo, everything is adding to your result.
+- Add the result and your conclusions to the final academic report.
 
-### 2. API Integration Testing
-- Implement integration tests for all REST API endpoints.
-- Use REST-assured for API testing.
-- Document test cases and use data-sets for parameterized tests.
-
-### 3. UI Automation
-- Implement UI automation for the new frontend using Selenium WebDriver.
-- Document test case design (`diseño de casos de prueba`).
-- Generate a report with results, including screenshots of failed tests.
-- Cover flows for login, CRUD operations, About Us scrolling, and file upload.
-
-### 4. Data-Set Usage
-- Where tests require multiple data points, use data-sets (e.g., CSV, JSON, or Excel).
+#### Data-Set Usage
+- Where tests require multiple data points (any milestone), use data-sets (e.g., CSV, JSON, or Excel).
 - Example Java snippet for loading data from a CSV data-set:
 
 ```java
@@ -69,10 +61,30 @@ public List<String[]> loadCsvData(String path) throws Exception {
     return data;
 }
 ```
+- Use the loaded data in your test methods to drive parameterized tests, **this is going to be evaluated**.
 
-- Use the loaded data in your test methods to drive parameterized tests.
+### 2. Milestone 2 ✅
+- Validate API behavior with automated integration tests using REST-assured
+- Implement integration tests for all REST API endpoints.
+- Cover all REST endpoints (GET, POST, PUT, DELETE).
+- Use data-sets (e.g., CSV or JSON) to parameterize test data. (This is a plus, but is not required, it's doable with your knowleadge, I suggest doing it)
+- Document test cases and use data-sets for parameterized tests.
+- Make a new branch e.g.: milestone-2 and push your changes, **THIS IS IMPORTANT**
+- Generate Allure reports.
+- Run tests on GitHub Actions for every PR or push to main.
+- Add the result and your conclusions to the final academic report.
 
-### 5. Documentation & Reporting
+### 3. Milestone 3 ✅
+- Implement UI automation for the frontend using Selenium WebDriver.
+- Document designed test cases and use data-sets where appropriate.
+- Generate a report with results, including screenshots of failed tests.
+- Cover flows for every function provided by the Front-End.
+- Use the tools at your disposal, Allure Report, Surefire, JaCoCo, everything is adding to your result.
+- User your knowleade as a tester to report and document bugs you found.
+- Add the result and your conclusions to the final academic report.
+- Make a new branch e.g.: milestone-3 and push your changes, **THIS IS IMPORTANT**
+
+###  📝 Documentation & Reporting  📝
 - Document all designed test cases and test flows.
 - For each test run, produce a report with:
   - Results summary
@@ -82,21 +94,3 @@ public List<String[]> loadCsvData(String path) throws Exception {
 ### 6. CI/CD Integration (GitHub Actions)
 - Set up a GitHub Actions workflow to run all tests (unit, API, UI) on each push or pull request.
 - Ensure the workflow produces test reports and artifacts (e.g., screenshots).
-
----
-
-## ❗ Notes
-- Performance testing and Newman/Postman tests are **not required**.
-- All test automation should use REST-assured for API and Selenium WebDriver for UI.
-- The `NO-MOSTRAR` folder contains example test suites and resources for reference only. Do not copy; use as inspiration for your own implementation.
-
-## 📖 Further Reading
-- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [REST-assured](https://rest-assured.io/)
-- [TestNG](https://testng.org/)
-- [Selenium WebDriver](https://www.selenium.dev/documentation/)
-- [GitHub Actions](https://docs.github.com/en/actions)
-
----
-
-For questions or issues, please use the issue tracker.
