@@ -32,10 +32,29 @@ The app will be available at [http://localhost:9966/petclinic/index.html](http:/
 - `src/main/resources/static/` — Frontend (HTML, CSS, JS)
 
 # Milestones
-You are expected to create a full testing and automation suite for this project. Your milestones should include:
+You are expected to create a full testing and automation suite for this project.
+Part of the requierement is to investigate and try to solve problems, so have that in mind.
+
+###  📝 Documentation & Reporting  📝
+- Document all designed test cases and test flows for each milestone.
+- For each test run, produce a report with:
+  - Results summary
+  - Screenshots of failed UI tests
+  - Data-sets used
+
+### 6. CI/CD Integration (GitHub Actions)
+- Set up a GitHub Actions workflow to run all tests (unit, API, UI) on each push or pull request.
+- Ensure the workflow produces test reports and artifacts (e.g., screenshots).
+
+
+### 1. Milestone 0 ✅
+- Learn how the application works, test it using the front-end and Postman.
+- Read about Springboot
+- Read understand and use mockito (for basic usage) e.g.: https://www.youtube.com/watch?v=PJNcxY4I1F8
 
 ### 1. Milestone 1 ✅
 - Identify classes/methods suitable for unit testing.
+- You will find "Tests" already in the project for most of the classes that need to be tested.
 - Implement unit tests for backend logic.
 - Use TestNG as the test framework.
 - Document designed test cases and use data-sets where appropriate.
@@ -64,6 +83,15 @@ public List<String[]> loadCsvData(String path) throws Exception {
 - Use the loaded data in your test methods to drive parameterized tests, **this is going to be evaluated**.
 
 ### 2. Milestone 2 ✅
+- Validate API behavior with automated integration tests using Postman
+- Create a collection of tests for each function provided by the API
+- Use data-driven tests (https://www.youtube.com/watch?v=RH8b3gbujPY) **this is going to be evaluated**.
+- User collection variables
+- Write useful validations
+- Add the collection and variables to the github respository
+- Add the result and your conclusions to the final academic report.
+
+### 2. Milestone 3 ✅
 - Validate API behavior with automated integration tests using REST-assured
 - Implement integration tests for all REST API endpoints.
 - Cover all REST endpoints (GET, POST, PUT, DELETE).
@@ -74,7 +102,7 @@ public List<String[]> loadCsvData(String path) throws Exception {
 - Run tests on GitHub Actions for every PR or push to main.
 - Add the result and your conclusions to the final academic report.
 
-### 3. Milestone 3 ✅
+### 3. Milestone 4 ✅
 - Implement UI automation for the frontend using Selenium WebDriver.
 - Document designed test cases and use data-sets where appropriate.
 - Generate a report with results, including screenshots of failed tests.
@@ -83,14 +111,3 @@ public List<String[]> loadCsvData(String path) throws Exception {
 - User your knowleade as a tester to report and document bugs you found.
 - Add the result and your conclusions to the final academic report.
 - Make a new branch e.g.: milestone-3 and push your changes, **THIS IS IMPORTANT**
-
-###  📝 Documentation & Reporting  📝
-- Document all designed test cases and test flows.
-- For each test run, produce a report with:
-  - Results summary
-  - Screenshots of failed UI tests
-  - Data-sets used
-
-### 6. CI/CD Integration (GitHub Actions)
-- Set up a GitHub Actions workflow to run all tests (unit, API, UI) on each push or pull request.
-- Ensure the workflow produces test reports and artifacts (e.g., screenshots).

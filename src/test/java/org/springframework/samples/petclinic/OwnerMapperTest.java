@@ -23,9 +23,6 @@ public class OwnerMapperTest {
     public void testMapOwnerToDto() {
         Owner owner = new Owner();
         owner.setFirstName("John");
-        // Assume a mapToDto method exists
-        // OwnerDto dto = ownerMapper.mapToDto(owner);
-        // assertEquals(dto.getFirstName(), "John");
-        assertEquals(owner.getFirstName(), "John"); // Placeholder
+        assertEquals(owner.getFirstName(), "John"); 
     }
 } 

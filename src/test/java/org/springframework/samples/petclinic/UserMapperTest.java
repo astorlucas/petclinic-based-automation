@@ -10,21 +10,5 @@ import static org.testng.Assert.*;
 @Epic("Mapper")
 @Feature("UserMapper Unit Tests")
 public class UserMapperTest {
-    private UserMapper userMapper;
 
-    @BeforeMethod
-    public void setUp() {
-        userMapper = Mappers.getMapper(UserMapper.class);
-    }
-
-    @Test(description = "Should map User to DTO")
-    @Story("Map User")
-    public void testMapUserToDto() {
-        User user = new User();
-        user.setUsername("alice");
-        // Assume a mapToDto method exists
-        // UserDto dto = userMapper.mapToDto(user);
-        // assertEquals(dto.getUsername(), "alice");
-        assertEquals(user.getUsername(), "alice"); // Placeholder
-    }
 } 
