@@ -16,6 +16,8 @@ import java.util.Collection;
 @Mapper(uses = VisitMapper.class)
 public interface PetMapper {
 
+    PetMapper INSTANCE = null;
+
     @Mapping(source = "owner.id", target = "ownerId")
     PetDto toPetDto(Pet pet);
 
