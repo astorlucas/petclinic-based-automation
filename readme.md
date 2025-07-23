@@ -86,7 +86,7 @@ public List<String[]> loadCsvData(String path) throws Exception {
 - Validate API behavior with automated integration tests using Postman
 - Create a collection of tests for each function provided by the API
 - Use data-driven tests (https://www.youtube.com/watch?v=RH8b3gbujPY) **this is going to be evaluated**.
-- User collection variables
+- Use collection variables
 - Write useful validations
 - Add the collection and variables to the github respository
 - Add the result and your conclusions to the final academic report.
