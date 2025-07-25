@@ -9,11 +9,20 @@ This project is a RESTful backend for a veterinary clinic, with a modern static 
 Clone the repository and start the backend:
 ```sh
 git clone <repo-url>
-cd spring-petclinic-rest
+cd <project-location>
 ./mvnw spring-boot:run
 ```
 
+## Project Structure
+- `src/main/java/` — Backend REST API (Spring Boot)
+- `src/main/resources/static/` — Frontend (HTML, CSS, JS)
+
+### Front-end access
 The app will be available at [http://localhost:9966/petclinic/index.html](http://localhost:9966/petclinic/index.html)
+## Frontend Usage
+- After login (user: `user`, password: `password`), you will see a dashboard with cards for each main section.
+- Click a card to access Owners, Pets, Vets, Visits, Pet Types, Specialties, or About Us.
+- Specialties support bulk upload via CSV.
 
 ### API Documentation
 - Swagger UI: [http://localhost:9966/petclinic/swagger-ui.html](http://localhost:9966/petclinic/swagger-ui.html)
@@ -21,28 +30,21 @@ The app will be available at [http://localhost:9966/petclinic/index.html](http:/
 
 ### Database
 - By default, uses in-memory H2. See `src/main/resources/application.properties` for configuration.
+- This means that the data is only in memory, once you close the application, the data you created will disappear.
 
-## Frontend Usage
-- After login (user: `user`, password: `password`), you will see a dashboard with cards for each main section.
-- Click a card to access Owners, Pets, Vets, Visits, Pet Types, Specialties, or About Us.
-- Specialties support bulk upload via CSV.
-
-## Project Structure
-- `src/main/java/` — Backend REST API (Spring Boot)
-- `src/main/resources/static/` — Frontend (HTML, CSS, JS)
 
 # Milestones
 You are expected to create a full testing and automation suite for this project.
 Part of the requierement is to investigate and try to solve problems, so have that in mind.
 
-###  📝 Documentation & Reporting  📝
+###  📝 Documentation & Reporting 📝
 - Document all designed test cases and test flows for each milestone.
 - For each test run, produce a report with:
   - Results summary
   - Screenshots of failed UI tests
   - Data-sets used
 
-### 6. CI/CD Integration (GitHub Actions)
+### CI/CD Integration (GitHub Actions)
 - Set up a GitHub Actions workflow to run all tests (unit, API, UI) on each push or pull request.
 - Ensure the workflow produces test reports and artifacts (e.g., screenshots).
 
