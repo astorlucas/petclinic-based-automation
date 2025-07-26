@@ -22,21 +22,21 @@ jobs:
 
       - name: Archiva resultados de test
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: src/test/resources/test-results/
+          path: target/test-results
 
       - name: Archiva screenshots si falla un test
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: src/test/resources/screenshots/
+          path: target/screenshot-results
 
       - name: Carga Allure Report 
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: allure-reports
-          path: src/test/resources/allure-reports
+          path: target/allure-results
