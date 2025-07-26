@@ -19,3 +19,27 @@ jobs:
 
       - name: Ejecutar pruebas con Maven
         run: mvn test
+
+      - name: Archiva resultados de test
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            target/surefire-reports/
+            target/failsafe-reports/
+
+      - name: Archiva screenshots si falla un test
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: |
+            src/test/resources/screenshots/
+
+      - name: Carga Allure Report 
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: target/allure-results/
